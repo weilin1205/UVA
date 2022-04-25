@@ -1,2 +1,2 @@
 # UVa
-C++ Solution For UVA Problems
+C++ Solution For UVa Problems
