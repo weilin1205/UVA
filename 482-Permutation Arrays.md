@@ -3,11 +3,7 @@
 ## Problem ##
 
 ### 原文 ###
-*In many computer problems, it is necessary to permute data arrays. That is, the data in an array must
-be re-arranged in some specified order. One way to permute arbitrary data arrays is to specify the
-permutations with an index array to point out the position of the elements in the new array. Let x
-be an array that is to be permuted and let x be the permuted array. Then, we have the relationship
-between x and x that x pi = xi.*
+*In many computer problems, it is necessary to permute data arrays. That is, the data in an array must be re-arranged in some specified order. One way to permute arbitrary data arrays is to specify the permutations with an index array to point out the position of the elements in the new array. Let x be an array that is to be permuted and let x′ be the permuted array. Then, we have the relationship between x and x′ that x′pi = xi.*
 
 ### 大意 ###
 * 在許多電腦問題中，必須置換數據陣列。 
@@ -17,12 +13,12 @@ between x and x that x pi = xi.*
 ## Input ##
 
 ### 原文 ###
-The input begins with a single positive integer on a line by itself indicating the number of the cases
+*The input begins with a single positive integer on a line by itself indicating the number of the cases
 following, each of them as described below. This line is followed by a blank line, and there is also a
 blank line between two consecutive inputs.
 Each input set will contain two lines of numbers. The first line will be an index array p containing
 the integers 1 . . . n, where n is the number of integers in the list. The numbers in the first line will have
-been permuted in some fashion. The second line will contain a list numbers in floating point format.
+been permuted in some fashion. The second line will contain a list numbers in floating point format.*
 ### 大意 ###
 * 第一行為一個整數T，代表Case數量。
 * 每個Case前有皆有一個空白行做為開頭。
@@ -33,11 +29,11 @@ been permuted in some fashion. The second line will contain a list numbers in fl
 ## Output ##
 
 ### 原文 ###
-For each test case, the output must follow the description below. The outputs of two consecutive cases
+*For each test case, the output must follow the description below. The outputs of two consecutive cases
 will be separated by a blank line.
 The output for this program will be the list of floating point numbers from the input set, ordered
 according to the permutation array from the input file. The output numbers must be printed one per
-line in the same format in which they each appeared in the input file.
+line in the same format in which they each appeared in the input file.*
 ### 大意 ###
 * 對於每個Case。
 * 請將數據數組x根據索引數組p進行排序。
