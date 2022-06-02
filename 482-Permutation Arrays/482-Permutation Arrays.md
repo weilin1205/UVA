@@ -48,9 +48,9 @@
 ### C++ ###
 
 ```c++
+#include <iostream>
 #include <cstdio>
 #include <string>
-#include <iostream>
 #include <algorithm>
 #include <vector>
 using namespace std;
@@ -58,9 +58,9 @@ using namespace std;
 vector<int> vi;
 
 int main() {
-    int test_case;
-    scanf("%d", &test_case);
-    while (test_case--) {
+    int T;
+    scanf("%d", &T);
+    while (T--) {
         vi.clear();
         int n;
         char c;
@@ -78,7 +78,7 @@ int main() {
         for (int i = 1; i < vs.size(); i++) {
             cout << vs[i] << endl;
         }
-        if (test_case != 0)
+        if (T != 0)
             cout << endl;
     }
     return 0;
