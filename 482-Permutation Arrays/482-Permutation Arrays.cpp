@@ -1,31 +1,35 @@
-#include <stdio.h>
-#include <sstream>
+#include <cstdio>
+#include <string>
 #include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
+vector<int> vi;
+
 int main() {
-    int t;
-    string line;
-    scanf("%d", &t);
-    getchar();
-    while(t--) {
-        getchar();
-        int idx[5000], n = 1, i = 1;
-        string x[5000];
-        getline(cin, line);
-        stringstream sin;
-        sin << line;
-        while(sin >> idx[n])
-            n++;
-        getline(cin, line);
-        sin.clear();
-        sin << line;
-        while(sin >> x[idx[i]])
-            i++;
-        for(i = 1; i < n; i++)
-            cout << x[i] << endl;
-        if(t)
-            puts("");
+    int test_case;
+    scanf("%d", &test_case);
+    while (test_case--) {
+        vi.clear();
+        int n;
+        char c;
+        string s;
+        while (scanf("%d%c", &n, &c) == 2) {
+            vi.push_back(n);
+            if (c == '\n')
+                break;
+        }
+        vector<string> vs(vi.size() + 1);
+        for (int i = 0; i < vi.size(); i++) {
+            cin >> s;
+            vs[vi[i]] = s;
+        }
+        for (int i = 1; i < vs.size(); i++) {
+            cout << vs[i] << endl;
+        }
+        if (test_case != 0)
+            cout << endl;
     }
     return 0;
 }
