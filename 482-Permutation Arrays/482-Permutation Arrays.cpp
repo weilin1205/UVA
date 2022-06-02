@@ -1,3 +1,5 @@
+//完整介紹請參見隔壁之md文件 482-Permutation Arrays/482-Permutation Arrays.md
+
 #include <stdio.h>
 #include <sstream>
 #include <iostream>
