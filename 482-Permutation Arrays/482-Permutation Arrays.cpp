@@ -1,5 +1,3 @@
-//UVa 482-Permutation Arrays
-
 #include <stdio.h>
 #include <sstream>
 #include <iostream>
