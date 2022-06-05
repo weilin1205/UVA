@@ -57,3 +57,8 @@ int main()
 	return 0;
 }
 ```
+---
+
+## 程式執行結果 ##
+![image](https://user-images.githubusercontent.com/100191575/172056047-06958a59-44ec-4ff6-95d9-5fcff67c4dee.png)
+
