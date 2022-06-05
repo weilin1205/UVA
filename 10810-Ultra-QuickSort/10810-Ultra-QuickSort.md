@@ -49,33 +49,45 @@
 #include <iostream>
 #include <stdio.h>
 using namespace std;
-int A[500005];
-int tmp[500005];
-int n;
+int temp[500005];
 
-long long mergesort(int l,int r)
-{
-	if(l>=r){
-        return 0;
-	}
-	int m=l+(r-l)/2;
-	long long cnt=0;
-	cnt+=mergesort(l,m);
-	cnt+=mergesort(m+1,r);
-	int f=l, p=m+1;
-	for(int i=0;i<r-l+1;i++){
-		if(p>r || (f<=m && A[f]<=A[p])) tmp[i]=A[f++];
-		else tmp[i]=A[p++], cnt+=m-f+1;
-	}
-	f=0;
-	for(int i=l;i<=r;i++) A[i]=tmp[f++];
-	return cnt;
+long long int mergesort(int a[], int x, int y, long long int k) {
+    if (y == x)
+        return k;
+    k = mergesort(a, x, (x+y)/2, k);
+    k = mergesort(a, (x+y)/2+1, y, k);
+    for (int i = x, i1 = (x+y)/2+1, j = (x+y)/2, j1 = y, l = 0;;) {
+        if (i>j && i1>j1)
+            break;
+        else {
+            if (i>j) {
+                while (i1 <= j1) temp[l] = a[i1], i1++, l++;
+            }
+            else if (i1>j1) {
+                while (i<=j) temp[l] = a[i], i++, l++;
+            }
+            else if (a[i] > a[i1]) {
+                temp[l] = a[i1], k+= (j-i+1), l++, i1++;
+            }
+            else if (a[i] < a[i1]) {
+                temp[l] = a[i], l++, i++;
+            }
+        }
+    }
+    for(int i = x, j = 0; i<=y; i++, j++)
+        a[i] = temp[j];
+    return k;
 }
-int main()
-{
-	while(scanf("%d",&n)==1 && n){
-		for(int i=0;i<n;i++) scanf("%d",&A[i]);
-		printf("%lld\n",mergesort(0,n-1));
-	}
+int main() {
+    int n, a[500005];
+    long long int k;
+    while( scanf("%d",&n) && n) {
+        k = 0;
+        for(int i = 0; i<n; i++)
+            scanf("%d", &a[i]);
+        k = mergesort(a, 0, n-1, k);
+        printf("%lld\n", k);
+    }
+    return 0;
 }
 ```
