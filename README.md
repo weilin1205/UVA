@@ -1,5 +1,4 @@
-# UVa #
-## C++ Solutions For UVa Problems ##
+# C++ Solutions For UVa Problems #
 
 
 
