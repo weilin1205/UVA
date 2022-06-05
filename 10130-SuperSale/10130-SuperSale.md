@@ -55,6 +55,7 @@
 ### C++ ###
 
 ```c++
+#include <iostream>
 #include <cstdio>
 #include <algorithm>
 using namespace std;
@@ -62,12 +63,24 @@ using namespace std;
 int T, N, G, MW;
 int price[1005], weight[1005];
 int dp[35];
-int Knapsack();
+
+int Knapsack()
+{
+    if (dp[MW]) return dp[MW];
+    int dp[35] = {0};
+    for (int i = 0; i < N; ++i) {
+        for (int j = MW; j-weight[i] >= 0; --j) {
+            dp[j] = max(dp[j], dp[j-weight[i]] + price[i]);
+        }
+    }
+    return dp[MW];
+}
 
 int main()
 {
     scanf("%d", &T);
     while (T--) {
+        // Input
         scanf("%d", &N);
         for (int i = 0; i < N; ++i)
             scanf("%d %d", &price[i], &weight[i]);
@@ -85,15 +98,9 @@ int main()
         printf("%d\n", result);
     }
 }
-int Knapsack()
-{
-    if (dp[MW]) return dp[MW];
-    int dp[35] = {0};
-    for (int i = 0; i < N; ++i) {
-        for (int j = MW; j-weight[i] >= 0; --j) {
-            dp[j] = max(dp[j], dp[j-weight[i]] + price[i]);
-        }
-    }
-    return dp[MW];
-}
 ```
+
+---
+
+## 程式執行結果 ##
+<img width="338" alt="image" src="https://user-images.githubusercontent.com/100191575/172055608-284a0d4e-a647-4118-8a49-9e991bd4a365.png">
