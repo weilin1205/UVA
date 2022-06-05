@@ -1,4 +1,4 @@
-# UVa-482 Permutation Arrays #
+# UVa-10015 Joseph’s Cousin #
 
 **題目鏈結：https://onlinejudge.org/external/100/10015.pdf**
 
