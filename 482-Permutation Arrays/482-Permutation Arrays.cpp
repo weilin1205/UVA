@@ -1,33 +1,36 @@
 #include <iostream>
 #include <cstdio>
-#include <string>
 #include <algorithm>
+#include <string>
 #include <vector>
 using namespace std;
 
-vector<int> vi;
-
+vector<int> va;
 int main() {
-    int T;
+    int T;  //先輸入case的總數
     scanf("%d", &T);
     while (T--) {
-        vi.clear();
-        int n;
+    	va.clear(); //把va清空
+    	int num;
         char c;
-        string s;
-        while (scanf("%d%c", &n, &c) == 2) {
-            vi.push_back(n);
+        string str;
+        //開始輸入編號，如果遇到換行符便停止輸入
+        while (scanf("%d%c", &num, &c) == 2) {
+            va.push_back(num);  //把輸入的數推到va裡面
             if (c == '\n')
                 break;
         }
-        vector<string> vs(vi.size() + 1);
-        for (int i = 0; i < vi.size(); i++) {
-            cin >> s;
-            vs[vi[i]] = s;
+        vector<string> vb(va.size() + 1);
+        //開始輸入數據並進行排列
+        for (int i = 0; i < va.size(); i++) {
+        	cin>>str;
+            vb[va[i]] = str;
         }
-        for (int i = 1; i < vs.size(); i++) {
-            cout << vs[i] << endl;
+        //輸出排列好的數據
+        for (int i = 1; i < vb.size(); i++) {
+            cout << vb[i] << "\n";
         }
+        //每個case之間要有空行
         if (T != 0)
             cout << endl;
     }
