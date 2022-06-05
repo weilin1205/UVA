@@ -1,2 +1,8 @@
-# UVa
-C++ Solutions For UVa Problems
+# UVa #
+## C++ Solutions For UVa Problems ##
+
+**推薦閱讀包含完整文件的.md檔** 
+
+所有資料夾皆包含兩種檔案：
+1. "*.md* " 檔是完整的說明 ( 包含題目概要、解題思路、範例輸入輸出 以及 AC程式碼 ) 。
+2. "*.cpp*" 檔是單純的AC程式碼。
