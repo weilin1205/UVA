@@ -80,7 +80,6 @@ int main()
 {
     scanf("%d", &T);
     while (T--) {
-        // Input
         scanf("%d", &N);
         for (int i = 0; i < N; ++i)
             scanf("%d %d", &price[i], &weight[i]);
