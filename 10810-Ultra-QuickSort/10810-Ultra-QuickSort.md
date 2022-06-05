@@ -91,3 +91,9 @@ int main() {
     return 0;
 }
 ```
+---
+
+## 程式執行結果 ##
+![image](https://user-images.githubusercontent.com/100191575/172055983-2d0df1f2-6d83-42e3-ab43-ed56a349d477.png)
+
+
