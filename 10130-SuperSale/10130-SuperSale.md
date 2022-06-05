@@ -15,7 +15,8 @@
 * 最後需要輸出那一家人能買到的最高商品價值是多少
 
 ## 解題思路與策略 ##
-* 本題可視為背包問題，dp[MW]=k表示重量上限MW的背包裝的物品最多價值k。
+* 本題與演算法題中的背包問題類似。
+* 可以設dp[MW]=k表示重量上限MW的背包裝的物品最多價值k。
 
 ---
 
@@ -56,6 +57,7 @@
 ```c++
 #include <cstdio>
 #include <algorithm>
+using namespace std;
 
 int T, N, G, MW;
 int price[1005], weight[1005];
@@ -72,7 +74,7 @@ int main()
             scanf("%d %d", &price[i], &weight[i]);
         scanf("%d", &G);
 
-        std::fill(std::begin(dp), std::end(dp), 0);
+        fill(begin(dp),end(dp), 0);
         MW = 30;
         Knapsack();
 
@@ -90,7 +92,7 @@ int Knapsack()
     int dp[35] = {0};
     for (int i = 0; i < N; ++i) {
         for (int j = MW; j-weight[i] >= 0; --j) {
-            dp[j] = std::max(dp[j], dp[j-weight[i]] + price[i]);
+            dp[j] = max(dp[j], dp[j-weight[i]] + price[i]);
         }
     }
     return dp[MW];
