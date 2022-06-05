@@ -83,3 +83,9 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+## 程式執行結果 ##
+![image](https://user-images.githubusercontent.com/100191575/172055871-0f983284-4037-4b69-8b15-9a22803ef525.png)
+
