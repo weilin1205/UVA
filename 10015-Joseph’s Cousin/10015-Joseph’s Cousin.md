@@ -13,8 +13,9 @@
 * 針對輸入的每個測資輸出一行，表示最後活下來的人的編號。
 
 ## 解題思路與策略 ##
-* 本題題目，可以先舉個例子並加以印證，以方便了解題意。
+* 本題在了解題目規則時，可以先舉個例子並加以印證(如上方的舉例)，以方便了解題意並確定自己的想法是否正確。
 * 第i輪使用第i個質數作為淘汰的步長。
+* 我們可以先打表計算前3501個質數。
 
 ---
 
@@ -36,11 +37,41 @@
 
 ```c++
 #include <iostream>
+#include <cstdlib>
+#include <cstdio>
+using namespace std;
 
+int prime[4000];
+int visit[35000] = {0};
+
+int main()
+{
+        //先建立一個質數表
+	int prime_size = 0;
+	for(int i=2;i<35000;++i) {
+		if(!visit[i]) {
+			prime[prime_size ++]=i;
+			for(int j=i*i;j<35000;j+=i) {
+				visit[j]=1;
+			}
+		}
+	}
+	int n;
+	while(~scanf("%d",&n)&&n) {
+		int ans=0;
+		for(int i=2;i<=n;++i) {
+			ans=(ans+prime[n-i])%i;
+		}
+		printf("%d\n",ans+1);
+	}
+	
+	return 0;
+}
 ```
 
 ---
 
 ## 程式執行結果 ##
+![image](https://user-images.githubusercontent.com/100191575/172105630-e1030dc3-a1c6-4507-94d6-cb8a9e83d18f.png)
 
 
