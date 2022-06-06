@@ -72,6 +72,7 @@ int Knapsack()
     int dp[35] = {0};
     for (int i = 0; i < N; ++i) {
         for (int j = MW; j-weight[i] >= 0; --j) {
+        //迴圈順序必須從大到小，才能保證考慮 MW 的時候，所有 < MW 的地方仍未掃過
             dp[j] = max(dp[j], dp[j-weight[i]] + price[i]);
         }
     }
